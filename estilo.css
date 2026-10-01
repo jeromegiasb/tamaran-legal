@@ -1,0 +1,137 @@
+/* Páginas legales de Tamarán Nutrition.
+   Sin librerías ni fuentes externas: estas páginas tienen que abrir rápido y
+   funcionar en el móvil de cualquiera, incluido el revisor de una tienda. */
+
+:root {
+  --fondo: #ffffff;
+  --texto: #1a1a1a;
+  --suave: #5a5a5a;
+  --borde: #e2e2e2;
+  --acento: #13100d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #13100d;
+    --texto: #f0ece6;
+    --suave: #a8a29a;
+    --borde: #2e2a25;
+    --acento: #f0ece6;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 2rem 1rem 4rem;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-text-size-adjust: 100%;
+}
+
+main {
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.7rem;
+  line-height: 1.25;
+  margin: 0 0 0.25rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: 2.5rem 0 0.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--borde);
+}
+
+h3 {
+  font-size: 1rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.fecha {
+  color: var(--suave);
+  font-size: 0.9rem;
+  margin: 0 0 2rem;
+}
+
+a {
+  color: inherit;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.6rem 0.5rem;
+  border-bottom: 1px solid var(--borde);
+}
+
+th {
+  font-weight: 600;
+}
+
+/* En el móvil una tabla de tres columnas no cabe: cada fila pasa a ser un
+   bloque con su etiqueta delante. Es la diferencia entre leerse y no leerse. */
+@media (max-width: 34rem) {
+  table,
+  tbody,
+  tr,
+  td {
+    display: block;
+    width: 100%;
+  }
+  thead {
+    display: none;
+  }
+  tr {
+    border-bottom: 1px solid var(--borde);
+    padding: 0.5rem 0;
+  }
+  td {
+    border: 0;
+    padding: 0.15rem 0;
+  }
+  td::before {
+    content: attr(data-et) ': ';
+    font-weight: 600;
+  }
+}
+
+.aviso {
+  border-left: 3px solid var(--acento);
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0;
+  background: rgba(127, 127, 127, 0.07);
+}
+
+.pie {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--borde);
+  color: var(--suave);
+  font-size: 0.9rem;
+}
+
+code {
+  background: rgba(127, 127, 127, 0.14);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
